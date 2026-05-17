@@ -437,7 +437,7 @@ def delete_comment(post_id: str, comment_id: str) -> Tuple[Response, Any]:
         return excepty(e)
 
 
-SPHINX_BUILD_PATH = os.path.join(os.getcwd(), 'docs', '_build', 'html')
+SPHINX_BUILD_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'docs', '_build', 'html')
 
 @api.route('/api/docs/<path:filename>')
 def serve_docs(filename):

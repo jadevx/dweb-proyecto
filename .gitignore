@@ -48,9 +48,8 @@ docker-compose.override.yml# local docker-compose tweaks
 **/htmlcov/
 **/.pytest_cache/
 
-# Sphinx build output (but keep source in backend/docs/)
-**/docs/
-!**/docs/_build/
+# Sphinx build output
+!backend/docs/
 
 # ─── Node  ────────────────────────────────────────────
 **/node_modules/
