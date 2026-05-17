@@ -8,7 +8,7 @@ from typing import Any, List, Dict, Tuple
 import os
 
 api: Flask = Flask(__name__)
-CORS(api, supports_credentials=True)
+CORS(api, supports_credentials=True, origins=os.getenv("CORS_ORIGINS", "*").split(","))
 
 #Methods
 @api.route("/api/app/logout", methods=["POST"])
@@ -55,7 +55,7 @@ def set_token(token: Dict[str, Any], code: int = 200) -> Response:
         "token", token['token'],
         httponly = True,
         secure = True,
-        samesite = "Strict",
+        samesite = "None",
         max_age = 86400 #1 día
     )
     return response
@@ -140,7 +140,7 @@ def verify_token(f) -> Response:
                 new_token,
                 httponly=True,
                 secure=True,
-                samesite="Strict",
+                samesite="None",
                 max_age=86400
             )
             return response_obj

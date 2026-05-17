@@ -8,7 +8,8 @@ lerna-debug.log*
 
 # ─── Environment Variables ────────────────────────────────────────────────────
 *.env
-.env.* 
+.env.*
+!.env.example
 
 # ─── Editor / IDE ─────────────────────────────────────────────────────────────
 .vscode/
