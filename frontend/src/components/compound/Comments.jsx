@@ -126,6 +126,7 @@ const Comment = ({ postID, comment }) => {
         <div className="flex flex-row justify-between w-full items-center">
           <UserCard
             kind="comment"
+            name={comment.creator}
             user={comment.creator}
             description={ratingStars(comment.rating)}
           />

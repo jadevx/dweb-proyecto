@@ -101,7 +101,7 @@ const Post = () => {
           </Container.Body>
 
           <Container.Footer className="flex flex-row justify-between items-center">
-            <UserCard name={post.creator} description={`Hace ${timeSince(post.createdAt)}`} />
+            <UserCard name={post.creator} user={post.creator} description={`Hace ${timeSince(post.createdAt)}`} />
             <div className="flex items-center gap-2">
               <Button.Tooltip
                 content={`${compactNumber(likes)} like${likes === 1 ? '' : 's'}`}
